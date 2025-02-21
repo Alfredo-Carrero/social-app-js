@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Donegal+One&display=swap");
+
+/* Variables de colores */
+:root {
+  --btn-color: #1da1f2;
+  --btn-hover-color: #0d8ddb;
+  --btn-color-delete: #e0245e;
+  --btn-hover-color-delete: #d11e4a;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+/* Estructura del header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: black;
+  border: 1px solid lightgray;
+  border-radius: 30px;
+  box-shadow: 0 0px 4px rgb(255, 253, 253);
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--btn-hover-color);
+}
+
+input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 10px;
+  background-color: black;
+  border-color: lightgray;
+  color: lightgray;
+}
+
+h1 {
+  font-family: "Donegal One", serif;
+  font-weight: bolder;
+  font-style: normal;
+  font-size: 24px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+h3 {
+  font-family: "Donegal One", serif;
+  font-weight: bolder;
+  font-style: normal;
+}
+
+.fa-solid {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.fa-solid:hover {
+  color: var(--btn-hover-color-delete);
+}
+
+/* Contenedor */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 30px;
+  width: 30%;
+  height: 230px;
+  margin-top: 50px;
+  border: 2px solid gray;
+  border-radius: 20px;
+}
+
+.all-users {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#friends-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 25%;
+}
+
+#friends-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Feed de publicaciones */
+.feed {
+  width: 60%;
+}
+
+#feed-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post {
+  width: 400px;
+  /* background-color: lightgray; */
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid lightgray;
+  /* color: black; */
+  /* box-shadow: 0 4px 6px rgb(255, 255, 255); */
+}
+
+.post span {
+  font-weight: bold;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-content {
+  margin-top: 10px;
+}
+
+/* Tarjetas de usuario */
+.user-card {
+  background-color: black;
+  border: 1px solid lightslategray;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  width: 300px;
+  margin-top: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-card:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Usuario */
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.username {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Botones */
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.follow-btn,
+.delete-btn,
+.login,
+.sign-btn {
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.follow-btn,
+.login,
+.sign-btn {
+  background-color: var(--btn-color);
+  color: white;
+  border-radius: 30px;
+}
+
+.delete-btn {
+  background-color: var(--btn-color-delete);
+  color: white;
+  border-radius: 30px;
+}
+
+.follow-btn:hover {
+  background-color: var(--btn-hover-color);
+}
+
+.delete-btn:hover {
+  background-color: var(--btn-hover-color-delete);
+}
+
+.login:hover,
+.sign-btn:hover {
+  background-color: var(--btn-hover-color);
+}
+
+/* Responsividad: */
+@media screen and (max-width: 1024px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .feed {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 80%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .fa-solid {
+    font-size: 20px;
+    margin-right: 25px;
+  }
+
+  .follow-btn,
+  .delete-btn,
+  .login,
+  .sign-btn {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 90%;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+
+  .fa-solid {
+    font-size: 18px;
+  }
+}

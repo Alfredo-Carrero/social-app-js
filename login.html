@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOCIAL APP</title>
+    <!--CSS Styles-->
+    <!-- <link rel="stylesheet" href="css/styles.css" /> -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1>Social App Login</h1>
+
+    <div class="container">
+      <form
+        action="main.html"
+        name="log-form"
+        onsubmit="verifyLogin(event)"
+        id="login-form"
+      >
+        <input type="text" class="user" id="user" placeholder="Username" />
+
+        <br /><br />
+
+        <input
+          type="password"
+          class="password"
+          id="password"
+          placeholder="password"
+        />
+
+        <br /><br />
+
+        <p>
+          If you don't have account, please click
+          <span><a href="sign.html">here</a></span>
+        </p>
+
+        <input type="submit" value="Log in" class="login" id="login-btn" />
+      </form>
+    </div>
+
+    <!--Javascript-->
+    <script src="js/script.js"></script>
+  </body>
+</html>
