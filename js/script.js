@@ -141,7 +141,7 @@ function createUsersCard() {
 
 // Function load posts
 function loadPosts() {
-  const postsToShow = posts.slice(0, 3);
+  const postsToShow = posts.slice(0, 5);
 
   postsToShow.forEach((post) => {
     const postElement = document.createElement("div");
@@ -149,7 +149,8 @@ function loadPosts() {
 
     postElement.innerHTML = `
     <div class="post-header">
-        <span class="username">User ${post.userId}</span>
+        <h3 class="username">User ${post.userId}</h3>
+        <img src="img/user.png" alt="user-img" class="user-img" />
       </div>
       <div class="post-content">
         <p>${post.title}</p>
@@ -220,6 +221,7 @@ function followUser() {
   });
 }
 
+// Move cards to friends container
 function moveToFriends(friendCard) {
   const friendsList = document.getElementById("friends-list");
   friendsList.appendChild(friendCard);
@@ -246,6 +248,7 @@ function moveToFriends(friendCard) {
   localStorage.setItem("followedFriends", JSON.stringify(followedFriends));
 }
 
+// Unfollow user function
 function unfollowFriend(friendCard) {
   const friendsList = document.getElementById("friends-list");
 
@@ -267,7 +270,7 @@ function unfollowFriend(friendCard) {
   localStorage.setItem("followedFriends", JSON.stringify(followedFriends));
 }
 
-// Función para cargar los amigos seguidos desde localStorage
+// load followed friends of localStorage function
 function loadFollowedFriends() {
   const followedFriends =
     JSON.parse(localStorage.getItem("followedFriends")) || [];
