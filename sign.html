@@ -3,20 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SOCIAL APP</title>
+    <title>SOCIAL SIGN IN APP</title>
     <!--CSS Styles-->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/sign.css" />
   </head>
   <body>
-    <h1>Social App Sign In</h1>
+    <div class="container-sign">
+      <a href="index.html" class="img-app">
+        <img src="img/logo-world.gif" alt="logo-world" />
+      </a>
 
-    <div class="container">
-      <form action="main.html" name="sign-form" onsubmit="verifySignIn(event)">
+      <h1>Social App Sign In</h1>
+
+      <form action="main.html" name="sign-form">
         <input
           type="text"
-          class="user-sign"
+          class="inputs"
           id="user-sign"
           placeholder="username"
+          required
         />
 
         <br /><br />
@@ -24,32 +29,31 @@
         <input
           type="email"
           name="email"
-          class="email-sign"
+          class="inputs"
           id="email-sign"
           placeholder="email"
+          required
         />
 
         <br /><br />
 
         <input
           type="password"
-          class="password-sign"
+          class="inputs"
           id="password-sign"
           placeholder="password"
+          required
         />
 
         <br /><br />
 
         <p>
           I have an
-          <span><a href="login.html">account</a></span>
+          <span><a href="login.html" class="link-login">account</a></span>
         </p>
 
-        <input type="submit" value="Sign in" class="sign-btn" id="sign-btn" />
+        <input type="submit" value="Sign in" class="sign-btn" />
       </form>
     </div>
-
-    <!--Javascript-->
-    <script src="js/script.js"></script>
   </body>
 </html>

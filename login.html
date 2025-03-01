@@ -3,43 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SOCIAL APP</title>
+    <title>SOCIAL LOGIN APP</title>
     <!--CSS Styles-->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/login.css" />
   </head>
   <body>
-    <h1>Social App Login</h1>
+    <div class="container-login">
+      <a href="index.html" class="img-app">
+        <img src="img/logo-world.gif" alt="logo-world" />
+      </a>
 
-    <div class="container">
-      <form
-        action="main.html"
-        name="log-form"
-        onsubmit="verifyLogin(event)"
-        id="login-form"
-      >
-        <input type="text" class="user" id="user" placeholder="Username" />
+      <h1>Social App Login</h1>
+      <form action="main.html" name="log-form" id="login-form">
+        <input
+          type="text"
+          class="inputs"
+          id="user"
+          placeholder="Username"
+          required
+        />
 
         <br /><br />
 
         <input
           type="password"
-          class="password"
+          class="inputs"
           id="password"
           placeholder="password"
+          required
         />
 
         <br /><br />
 
         <p>
           If you don't have account, please click
-          <span><a href="sign.html">here</a></span>
+          <span><a href="sign.html" class="link-sign">here</a></span>
         </p>
 
-        <input type="submit" value="Log in" class="login" id="login-btn" />
+        <input type="submit" value="Log in" class="login-btn" id="login-btn" />
       </form>
     </div>
-
-    <!--Javascript-->
-    <script src="js/script.js"></script>
   </body>
 </html>

@@ -1,23 +1,5 @@
-// API "https://reqres.in/"
-
-/*-------------------------------------------------------------------------*/
-// DOM ELEMENTS
-/*-------------------------------------------------------------------------*/
-
-// login elements
-const userLogin = document.getElementById("user");
-const passwordLogin = document.getElementById("password");
-const loginForm = document.getElementById("login-form");
-
-// sign elements
-const userSign = document.getElementById("user-sign");
-const emailSign = document.getElementById("email-sign");
-const passwordSign = document.getElementById("password-sign");
-const signBtn = document.getElementById("sign-btn");
-
 // main elements
 const allUsers = document.getElementById("all-users");
-const logOutBtn = document.getElementById("logout-btn");
 
 // feed elements
 const feedPost = document.getElementById("feed-posts");
@@ -33,7 +15,6 @@ let posts = [];
 /*-------------------------------------------------------------------------*/
 // FETCHS
 /*-------------------------------------------------------------------------*/
-
 let loading = false;
 
 // Load users from API
@@ -49,9 +30,6 @@ const fetchUsers = async () => {
   userId = allUsersAPI.id;
 
   loadAllUsers();
-
-  console.log(allUsersAPI);
-  console.log(totalUsers);
 };
 
 // Load posts from API
@@ -77,9 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // loadFollowedFriends Event
 window.addEventListener("load", loadFollowedFriends);
-
-// LogOut Event
-logOutBtn.addEventListener("click", logOut);
 
 /*-------------------------------------------------------------------------*/
 // FUNCTIONS
@@ -113,7 +88,6 @@ function createUsersCard() {
 
     cardUser.setAttribute("data-id", userId);
     allUsers.appendChild(cardUser);
-    console.log("User id: " + userId);
   }
 
   for (let i = 0; i < allUsersAPI.length; i++) {
@@ -135,7 +109,6 @@ function createUsersCard() {
 
     cardUser.setAttribute("data-id", userId);
     allUsers.appendChild(cardUser);
-    console.log("User id: " + userId);
   }
 }
 
@@ -151,7 +124,7 @@ function loadPosts() {
     <div class="post-header">
         <h3 class="username">User ${post.userId}</h3>
         <img src="img/user.png" alt="user-img" class="user-img" />
-      </div>
+    </div>
       <div class="post-content">
         <p>${post.title}</p>
         <p>${post.body}</p>
@@ -162,47 +135,10 @@ function loadPosts() {
   });
 }
 
-// Function verify user login
-function verifyLogin(e) {
-  if (userLogin.value == "" && passwordLogin.value == "") {
-    e.preventDefault();
-    alert("Usuario y contraseña vacíos, vuelve a introducir tus datos");
-    return;
-  }
-
-  if (userLogin.value == "" || passwordLogin.value == "") {
-    e.preventDefault();
-    alert("Usuario o contraseña vacíos, vuelve a introducir tus datos");
-    return;
-  }
-}
-
-// Function verify user sign in
-function verifySignIn(e) {
-  if (
-    userSign.value == "" &&
-    emailSign.value == "" &&
-    passwordSign.value == ""
-  ) {
-    e.preventDefault();
-    alert("No has introducido ningún dato");
-    return;
-  }
-
-  if (
-    userSign.value == "" ||
-    emailSign.value == "" ||
-    passwordSign.value == ""
-  ) {
-    e.preventDefault();
-    alert("Uno o más campos están vacíos, por favor, introdúcelos");
-    return;
-  }
-}
-
 // LogOut function
 function logOut() {
-  window.location.href = "login.html";
+  window.location.href = "index.html";
+  localStorage.clear();
 }
 
 // Follow user function
@@ -216,7 +152,6 @@ function followUser() {
 
       // Mover la tarjeta del usuario a la sección de friends
       moveToFriends(friendCard);
-      alert(`Ahora sigues a este usuario!`);
     });
   });
 }
@@ -310,7 +245,6 @@ function deleteUser() {
 
       // Eliminar el usuario de la lista de amigos (en el DOM y en el localStorage)
       unfollowFriend(friendCard);
-      alert(`Dejaste de seguir a este usuario!`);
     });
   });
 }

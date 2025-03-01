@@ -29,32 +29,9 @@ header h1 {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--btn-hover-color);
-}
-
-input {
-  width: 100%;
-  border-radius: 5px;
-  border: 1px solid lightgray;
-  padding: 10px;
-  background-color: black;
-  border-color: lightgray;
-  color: lightgray;
-}
-
-h1 {
   font-family: "Poppins", serif;
   font-weight: 700;
   font-style: normal;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
 }
 
 h3 {
@@ -70,20 +47,6 @@ h3 {
 
 .fa-solid:hover {
   color: var(--btn-hover-color-delete);
-}
-
-/* Contenedor */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  padding: 30px;
-  width: 30%;
-  height: 230px;
-  margin-top: 50px;
-  border: 1px solid gray;
-  border-radius: 20px;
 }
 
 .all-users {
@@ -129,11 +92,6 @@ h3 {
   border-radius: 20px;
   padding: 10px;
   overflow-y: scroll;
-}
-
-.feed p,
-.feed span,
-.feed h3 {
   color: white;
 }
 
@@ -148,7 +106,6 @@ h3 {
   padding: 15px;
   border-radius: 8px;
   border: 1px solid lightgray;
-  box-shadow: 0 2px 5px rgb(255, 255, 255);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -254,7 +211,9 @@ h3 {
   background-color: var(--btn-hover-color);
 }
 
-/* Responsividad: */
+/* RESPONSIVE */
+
+/* Pantallas pequeñas */
 @media screen and (max-width: 1024px) {
   .main-container {
     flex-direction: column;
@@ -267,8 +226,17 @@ h3 {
   .feed {
     width: 75%;
   }
+
+  .user-card {
+    width: 100%; 
+  }
+
+  .post {
+    width: 100%;
+  }
 }
 
+/* Móviles */
 @media screen and (max-width: 768px) {
   .container {
     width: 80%;
@@ -295,8 +263,17 @@ h3 {
   .feed {
     width: 75%;
   }
+
+  .user-card {
+    width: 100%; 
+  }
+
+  .post {
+    width: 100%;/
+  }
 }
 
+/* Móviles muy pequeños */
 @media screen and (max-width: 480px) {
   .container {
     width: 90%;
@@ -314,5 +291,18 @@ h3 {
 
   .feed {
     width: 100%;
+  }
+
+  .user-card {
+    width: 100%; 
+  }
+
+  .post {
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-top: 20px; 
   }
 }
