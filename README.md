@@ -1,6 +1,7 @@
 # Social App JavaScript
 
 Este proyecto es una **simulación de una red social**, similar a la plataforma X. Está diseñado para practicar con **HTML, CSS y Vanilla JavaScript** y tiene como objetivo mostrar una serie de características típicas de redes sociales, como la gestión de usuarios, publicaciones y la interacción básica entre ellos.
+Puedes echarle un ojo en (https://social-app-js.vercel.app/).
 
 ## Características Principales
 
